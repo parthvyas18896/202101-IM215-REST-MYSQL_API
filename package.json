@@ -1,0 +1,17 @@
+{
+  "name": "202101-IM215-REST-MYSQL_API",
+  "version": "1.0.0",
+  "description": "\"This is demo of Rest API\"",
+  "main": "index.js",
+  "repository": "https://github.com/parthvyas18896/202101-IM215-REST-MYSQL_API.git",
+  "author": "parthvyas18896 <pvyas1@confederationcollege.ca>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.7"
+  },
+  "scripts": {
+    "dev": "node index.js"
+  }
+}
