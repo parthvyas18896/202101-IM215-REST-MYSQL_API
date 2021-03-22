@@ -6,6 +6,38 @@ const bodyparser = require('body-parser');
 const app = express()
 app.use(morgan('dev'))
 app.use(bodyparser.urlencoded({extended:false}))
+const users = [
+    {first_name : 'Parth', last_name:'Vyas',age:'24'},
+    {first_name : 'JOhn', last_name:'Doe',age:'24'}]
+    
+    app.get('/', (request, response) => {
+        response.send('Welcome');
+    });
+    app.get('/user', (request, response) => {
+        response.json(users);
+    });
+    app.get('/user/:id', (request, response) => {
+        console.log(request.params)
+        const {id} = request.params;
+        response.json(users[id]);
+    });
+    app.post('/user', (request,response) =>{
+        console.log(request.body);
+        const {first_name,last_name,age} = request.body
+        users.push({first_name,last_name,age});
+        
+        response.end()
+    } )
+    
+    app.delete('/user/:id', (request, response) => {
+        console.log(request.params)
+        const {id} = request.params;
+        users.splice(id,1);
+        response.json(users[id]);
+    });
+    
+
+
 
 
 app.get('/', (request, response) => {
