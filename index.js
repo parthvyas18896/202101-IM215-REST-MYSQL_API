@@ -21,8 +21,20 @@ app.get('/', (request, response) => {
     response.end();
 
 });
-app.get('/:first_name/:last_name',(request,response) =>{
-    console.log('Route parameters')
+// app.get('/:first_name/:last_name',(request,response) =>{
+//     console.log('Route parameters')
+//     console.log(request.params);
+// //     response.end()
+// })
+app.get('/id/:user_id',(request,response) =>{
+     
+    console.log('query parameters')
+    console.log(request.query);
+    
+    console.log("Body");
+    console.log(request.body);
+
+    console.log('####Route parameters')
     console.log(request.params);
     response.end()
 })
